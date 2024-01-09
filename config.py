@@ -1,10 +1,11 @@
 class Config:
-    def __init__(self):
-        self.healthcheckIntervalSeconds = 15
-        self.requestTimeoutSeconds = 0.5
+    healthcheckIntervalSeconds = 15
+    requestTimeoutSeconds = 0.5
 
-    def getHealthcheckIntervalSeconds(self):
-        return self.healthcheckIntervalSeconds
+    @classmethod
+    def getHealthcheckIntervalSeconds(cls):
+        return cls.healthcheckIntervalSeconds
     
-    def getRequestTimeoutSeconds(self):
-        return self.requestTimeoutSeconds
+    @classmethod
+    def getRequestTimeoutSeconds(cls):
+        return cls.requestTimeoutSeconds

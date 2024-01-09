@@ -80,7 +80,7 @@ def startThreads(allEndpoints):
         t.join()
 
 
-def displayAvailability():
+def displayDomainAvailability():
     print("---------------------------")
     for domainRecord in domainStatusDict.values():
         print(f'{domainRecord.domain} has {domainRecord.getDomainAvailability()}% availability percentage')
@@ -97,7 +97,7 @@ def main(argv):
             allEndpoints = loadEndpointData(argv[0])
             while True:
                 startThreads(allEndpoints)
-                displayAvailability()
+                displayDomainAvailability()
                 time.sleep(Config.getHealthcheckIntervalSeconds())
         except KeyboardInterrupt:
             print("\nProgram terminated by user (Ctrl+C). Exiting gracefully...")
